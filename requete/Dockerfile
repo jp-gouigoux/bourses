@@ -8,4 +8,4 @@ WORKDIR /opt/app
 ADD src/ /opt/app
 
 EXPOSE 81
-CMD ["node", "server.js"]
+CMD ["node", "/opt/app/server.js"]
