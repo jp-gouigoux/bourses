@@ -38,3 +38,4 @@ services:
     image: "bourses-notification"
     ports:
       - "87:87"
+     

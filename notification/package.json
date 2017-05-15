@@ -1,0 +1,13 @@
+{
+  "name": "notification",
+  "version": "0.0.1",
+  "main": "server.js",
+  "author": "Nanou et Clément",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "~1.4.3",
+    "express": "~4.7.2",
+    "gmail-send": "^1.2.10",
+    "method-override": "~2.1.1"
+  }
+}
