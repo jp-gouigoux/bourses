@@ -2,7 +2,7 @@
 
 ## Responsabilité
 
-Ce service a pour rôle de ...
+Ce service a pour rôle d'assurer la persistence des données
 
 ## Lancement
 

@@ -7,5 +7,7 @@ RUN mkdir -p /opt/app && cp -a /tmp/node_modules /opt/app/
 WORKDIR /opt/app
 ADD . /opt/app
 
-EXPOSE 84
-CMD ["node", "server.js"]
+#ARG URLDemandeBourse
+
+EXPOSE 80
+CMD ["node", "index.js"]
