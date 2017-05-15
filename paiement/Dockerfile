@@ -7,5 +7,5 @@ RUN mkdir -p /opt/app && cp -a /tmp/node_modules /opt/app/
 WORKDIR /opt/app
 ADD . /opt/app
 
-EXPOSE 86
+EXPOSE 8686
 CMD ["node", "server.js"]
