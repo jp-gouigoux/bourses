@@ -32,8 +32,8 @@ services:
       - "85:85"
   paiement:
     image: "bourses-paiement"
-    ports: 
-      - "86:86"
+    ports:
+      - "8686:8686"
   notification:
     image: "bourses-notification"
     ports:
