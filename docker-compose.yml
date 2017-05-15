@@ -4,3 +4,37 @@ services:
     image: "mongo:3.2"
     ports:
       - "27017:27017"
+  portail:
+    image: "bourses-portail"
+    ports:
+      - "80:80"
+    environment:
+      - "URLDemandeBourse=http://swarmjpg.westeurope.cloudapp.azure.com:81/requeteur"
+  requete:
+    image: "bourses-requete"
+    ports:
+      - "81:81"
+  referentiel:
+    image: "bourses-referentiel"
+    ports:
+      - "82:82"
+  dispatch:
+    image: "bourses-dispatch"
+    ports:
+      - "83:83"
+  instruction:
+    image: "bourses-instruction"
+    ports:
+      - "84:84"
+  echeancier:
+    image: "bourses-echeancier"
+    ports:
+      - "85:85"
+  paiement:
+    image: "bourses-paiement"
+    ports: 
+      - "86:86"
+  notification:
+    image: "bourses-notification"
+    ports:
+      - "87:87"
