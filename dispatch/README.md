@@ -2,7 +2,7 @@
 
 ## Responsabilité
 
-Ce service a pour rôle de ...
+Ce service a pour rôle de servir les entites depuis le réferentiel vers le block instruction.
 
 ## Lancement
 
