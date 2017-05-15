@@ -1,0 +1,17 @@
+{
+  "name": "bourses-instruction",
+  "version": "0.1.0",
+  "main": "server.js",
+  "author": "FFR",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.4.3",
+    "express": "~4.7.2",
+    "feedparser": "^2.2.0",
+    "method-override": "~2.1.1",
+    "request": "^2.81.0"
+  }
+}
