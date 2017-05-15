@@ -4,16 +4,19 @@ var amountCalculation = function(article){
 
     const r = random(1,5);
 
+    const beneficiaire = article['atom:content']['m:properties']['d:beneficiaire']['#']
+
     if (r !== 4){
-        const ascii = article.beneficiaire.charCodeAt(0);
+
+        const ascii = beneficiaire.charCodeAt(0);
         let montant = ascii * 100;
 
-        article.montant = montant;
-        article.status = 'EN TRAITEMENT';
+        article['atom:content']['m:properties']['d:montant']['#'] = montant;
+        article['atom:content']['m:properties']['d:statut']['#'] = 'ENTRAITEMENT';
     } else {
 
-        article.montant = 0;
-        article.status = 'REFUSE';
+        article['atom:content']['m:properties']['d:montant']['#'] = 0;
+        article['atom:content']['m:properties']['d:statut']['#'] = 'REFUSE';
     }
     
     return article;
@@ -30,7 +33,7 @@ var updateArticle = function(article){
     request({
     host: url,
     port: 82,
-    path: '/bourses/'+article.beneficiaire,
+    path: '/bourses/'+article['atom:content']['m:properties']['d:beneficiaire']['#'],
     method: 'PUT',
     json: JSON.parse(article)
     },function(error,request,body){
@@ -38,7 +41,7 @@ var updateArticle = function(article){
         request({
             host: url,
             port: 85,
-            path: '/calcul/'+article.beneficiaire,
+            path: '/calcul/'+article['atom:content']['m:properties']['d:beneficiaire']['#'],
             method: 'POST'
         }) 
 
