@@ -1,9 +1,16 @@
-# Microservice notification
+# Bourses notification
 
-## Responsabilité
+## Format 
 
-Ce service a pour rôle de ...
+Accepte seulement un JSON valide. Par exemple : 
 
-## Lancement
+```
+{
+  "beneficiaire": "anael.chardan@gmail.com",
+  "montantAffecte": 100000
+}
+```
 
-    docker run -d -p 87:87 bourses-notification
+## Lancer
+
+`docker-compose up -d`

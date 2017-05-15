@@ -1,0 +1,9 @@
+version: "2"
+
+syncs:
+    api-platform-application-sync:
+        src: './'
+        sync_strategy: 'unison'
+        sync_args: '-prefer newer -copyonconflict'
+        sync_userid: 1000
+        sync_excludes: ['.gitignore', '.git/']
