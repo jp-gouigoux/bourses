@@ -8,8 +8,32 @@ var listener = 82;
 
 var server = http.createServer(app);
 server.listen(listener);
-//mongoose.connect('mongodb://Excilyano:Erfecohe20011993@bourses-shard-00-00-fog6x.mongodb.net:27017,bourses-shard-00-01-fog6x.mongodb.net:27017,bourses-shard-00-02-fog6x.mongodb.net:27017/bourses?ssl=true&replicaSet=bourses-shard-0&authSource=admin');
-mongoose.connect('mongodb://swarmjpg.westeurope.cloudapp.azure.com:27017');
+
+mongoose.connect('mongodb://swarmjpg.westeurope.cloudapp.azure.com:27017', function(err) {
+	if(err) {
+		console.log('connection error (first try)', err);
+		setTimeout(function() {
+			mongoose.connect('mongodb://swarmjpg.westeurope.cloudapp.azure.com:27017', function(err) {
+				if(err) {
+					console.log('connection error (second try)', err);
+					setTimeout(function() {
+						mongoose.connect('mongodb://swarmjpg.westeurope.cloudapp.azure.com:27017', function(err) {
+							if(err) {
+								console.log('connection error (three strikes... you are out)', err);
+							} else {
+								console.log('successful connection (third try... almost out)');
+							}
+						});
+					},10000);
+				} else {
+					console.log('successful connection (second try)');
+				}
+			});
+		},5000);
+	} else {
+		console.log('successful connection (first try)');
+	}
+});
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
