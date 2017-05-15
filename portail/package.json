@@ -1,0 +1,17 @@
+{
+  "name": "bourses-portail",
+  "version": "0.0.1",
+  "description": "Node.js / AngularJS web interface",
+  "main": "index.js",
+  "author": "Denis & Alexis",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/allarddenis/bourses-portail.git"
+  },
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-recaptcha": "^4.1.0",
+    "express": "~4.7.2"
+  }
+}
