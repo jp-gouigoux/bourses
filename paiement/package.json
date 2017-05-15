@@ -1,0 +1,17 @@
+{
+  "name"         : "api-skeleton",
+  "version"      : "0.0.1",
+  "description"  : "Skeleton for a Node.js API",
+  "main"         : "server.js",
+  "author"       : "JP Gouigoux <jp.gouigoux@free.fr>",
+  "license"      : "MIT",
+  "repository"   : {
+    "type" : "git",
+    "url" : "git://github.com/jpg-ouigoux/skeleton.git"
+  },
+  "dependencies" : {
+    "express"         : "~4.7.2",
+    "body-parser"     : "~1.4.3",
+    "method-override" : "~2.1.1"
+  }
+}
